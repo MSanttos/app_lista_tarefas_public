@@ -5,6 +5,10 @@
 		<title>App Lista Tarefas</title>
 
 		<link rel="stylesheet" href="css/estilo.css">
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 	</head>
@@ -28,7 +32,7 @@
 						<li class="list-group-item"><a href="todas_tarefas.php">Todas tarefas</a></li>
 					</ul>
 				</div>
-
+<!--  -->
 				<div class="col-md-9">
 					<div class="container pagina">
 						<div class="row">
