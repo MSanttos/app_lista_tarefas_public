@@ -10,17 +10,43 @@
     // echo '</pre>';
   /*****************/ 
 
-  $tarefa = new Tarefa();
-  $tarefa->__set('tarefa', $_POST['tarefa']);
+  $acao = isset ($_GET['acao']) ? $_GET['acao'] : $acao;
 
-  $conexao = new Conexao();
+  if ($acao == 'inserir'){
+    $tarefa = new Tarefa();
+    $tarefa->__set('tarefa', $_POST['tarefa']);
 
-  $tarefaService = new TarefaService($conexao, $tarefa);
-  $tarefaService->inserir();
+    $conexao = new Conexao();
 
-  /***** Debug *****/
-  echo '<pre>';
-  print_r($tarefaService);
-  echo '</pre>';
-  /*****************/
+    $tarefaService = new TarefaService($conexao, $tarefa);
+    $tarefaService->inserir();
+
+    header('Location: nova_tarefa.php?inclusao=1');
+
+    /***** Debug *****/
+    // echo '<pre>';
+    // print_r($tarefaService);
+    // echo '</pre>';
+    /*****************/
+  } else if($acao == 'recuperar') {
+    //echo 'cheguei aqui';
+    $tarefa = new Tarefa();
+    $conexao = new Conexao();
+
+    $tarefaService = new TarefaService($conexao, $tarefa);
+    $tarefas = $tarefaService->recuperar();
+  } else if($acao == 'atualizar'){
+    $tarefa = new Tarefa();
+    $tarefa->__set('id', $_POST['id']);
+    $tarefa->__Set('tarefa', $_POST['tarefa']);
+
+    $conexao = new Conexao();
+
+    $tarefaService = new TarefaService($conexao, $tarefa);
+    $tarefaService->atualizar();
+    if($tarefaService->atualizar()){
+      header('Location: todas_tarefas.php');
+    }
+  }
+  
 ?>
