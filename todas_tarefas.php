@@ -24,7 +24,7 @@
 		<link rel="manifest" href="/site.webmanifest">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-		<script src="main.js"></script>
+		<script src="js/main.js"></script>
 	</head>
 
 	<body>
@@ -52,24 +52,25 @@
 						<div class="row">
 							<div class="col">
 								<h4>Todas tarefas</h4>
-								<hr />
 
-								<?php foreach ($tarefas as $indice => $tarefa) { ?>
-									<!-- html -->
-									<div class="row mb-3 d-flex align-items-center tarefa">
-										<div class="col-sm-9" id="tarefa_<?=$tarefa->id?>"><?=$tarefa->tarefa?> <i>(<?=$tarefa->status?>)</i></div>
-										<div class="col-sm-3 mt-2 d-flex justify-content-between">
-											<i class="fas fa-trash-alt fa-lg text-danger" onclick="remover(<?=$tarefa->id?>)"></i>
+									<hr />
 
-											<?php if ($tarefa->status == 'pendente') {?>
-												<i class="fas fa-edit fa-lg text-info" onclick="editar(<?=$tarefa->id?>, '<?=$tarefa->tarefa?>')"></i>
-												<i class="fas fa-check-square fa-lg text-success" onclick="marcarRealizada(<?=$tarefa->id?>)"></i>
-											<?php } ?>	
-											
+									<?php foreach ($tarefas as $indice => $tarefa) { ?>
+										<!-- html -->
+										<div class="row mb-3 d-flex align-items-center tarefa">
+											<div class="col-sm-9" id="tarefa_<?=$tarefa->id?>"><?=$tarefa->tarefa?> <i>(<?=$tarefa->status?>)</i></div>
+											<div class="col-sm-3 mt-2 d-flex justify-content-between">
+												<i class="fas fa-trash-alt fa-lg text-danger" onclick="remover(<?=$tarefa->id?>)"></i>
+												<!-- condição -->
+												<?php if ($tarefa->status == 'pendente') {?>
+													<i class="fas fa-edit fa-lg text-info" onclick="editar(<?=$tarefa->id?>, '<?=$tarefa->tarefa?>')"></i>
+													<i class="fas fa-check-square fa-lg text-success" onclick="marcarRealizada(<?=$tarefa->id?>)"></i>
+												<?php } ?>	
+												<!-- condição -->
+											</div>
 										</div>
-									</div>
-									<!-- html -->
-								<?php } ?>
+										<!-- html -->
+									<?php } ?>
 
 							</div>
 						</div>

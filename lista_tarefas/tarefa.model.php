@@ -12,8 +12,9 @@
 
     public function __set($atributo, $valor){
       $this->$atributo = $valor;
+      //retorna o própio objeto instanciado
+      return $this;
     }
-
   }
 
 ?>
