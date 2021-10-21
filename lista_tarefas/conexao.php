@@ -3,9 +3,9 @@
   class conexao{
 
     private $host = 'localhost';
-    private $dbname = 'php_com_pdo';
+    private $dbname = 'lista_tarefas';
     private $user = 'root';
-    private $password = 'cogumelo8998';
+    private $password = '';
 
     /********************************/
 
